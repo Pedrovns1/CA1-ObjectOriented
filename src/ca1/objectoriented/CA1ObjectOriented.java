@@ -32,6 +32,9 @@ public class CA1ObjectOriented {
                int numClasses = Integer.parseInt(sc.nextLine());
                String studentNumber = sc.nextLine();
             
+               if (isValidData(firstName, secondName, numClasses, studentNumber)) {
+                    studentDataOutput(writer, studentNumber, secondName, numClasses);
+                }
             
             }
 
