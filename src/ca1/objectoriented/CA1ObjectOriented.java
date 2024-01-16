@@ -65,10 +65,32 @@ public class CA1ObjectOriented {
         
         }
     
+    
+    
+    
+    private static String studentWorkload(int numClasses) {
+    
+        if (numClasses == 1) {
+        return "Very light";
+        }
+        
+        if (numClasses == 2) {
+        return "Light";
+        }
+        
+        if (numClasses >= 3  && numClasses <=5) {
+        return "Part time";
+        }
+        
+        else {
+        return "Full time";
+        }
+    
     }
+
     
     
     
-    
-    
-    
+
+}
+
