@@ -98,7 +98,7 @@ public class CA1ObjectOriented {
     
     private static void studentDataOutput (BufferedWriter writer, String studentNumber, String secondName, int numClasses) throws IOException {
     
-    writer.write(studentNumber + " – " + secondName + " " + studentWorkload(numClasses) + "\n");
+    writer.write(studentNumber + " – " + secondName + " " + "\n" + studentWorkload(numClasses) + "\n");
     }
     
     
