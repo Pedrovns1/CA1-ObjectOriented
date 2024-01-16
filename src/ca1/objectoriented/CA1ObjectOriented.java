@@ -4,7 +4,9 @@
  */
 package ca1.objectoriented;
 
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 /**
@@ -20,11 +22,18 @@ public class CA1ObjectOriented {
 
         try {
             Scanner sc = new Scanner(new FileReader("C:\\Users\\peuvi\\Documents\\NetBeansProjects\\CA1-ObjectOriented\\students.txt"));
-
+            BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\peuvi\\Documents\\NetBeansProjects\\CA1-ObjectOriented\\status.txt"));
+           
             while (sc.hasNextLine()) {
-                System.out.println(sc.nextLine());
+               String[] names = sc.nextLine().split("\\s");
+               String firstName = names[0];
+               String secondName = names[1];
+               int numClasses = Integer.parseInt(sc.nextLine());
+               String studentNumber = sc.nextLine();
             }
 
+            
+            sc.close();
         } catch (Exception e) {
             System.out.println("e");
         }
