@@ -7,6 +7,7 @@ package ca1.objectoriented;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -30,6 +31,8 @@ public class CA1ObjectOriented {
                String secondName = names[1];
                int numClasses = Integer.parseInt(sc.nextLine());
                String studentNumber = sc.nextLine();
+            
+            
             }
 
             
@@ -88,6 +91,11 @@ public class CA1ObjectOriented {
     
     }
 
+    
+    private static void studentDataOutput (BufferedWriter writer, String studentNumber, String secondName, int numClasses) throws IOException {
+    
+    writer.write(studentNumber + " – " + secondName + " " + studentWorkload(numClasses) + "\n");
+    }
     
     
     
