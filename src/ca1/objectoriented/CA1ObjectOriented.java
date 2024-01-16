@@ -40,4 +40,35 @@ public class CA1ObjectOriented {
 
     }
 
-}
+    private static boolean isValidData(String firstName, String secondName, int numClasses, String studentNumber){
+    
+        if (!firstName.matches("[a-zA-z]*")) {
+            System.out.println("Invalid first name: " + firstName);
+            return false;
+        }
+        
+        if (!secondName.matches("[a-zA-Z0-9]*")) {
+            System.out.println("Invalid second name: " + secondName);
+            return false;
+        }
+        
+        if (numClasses <1 || numClasses > 8 ) {
+            System.out.println("Invalid number of classes: " + numClasses);
+            return false;
+        }
+        if (!studentNumber.matches("\\d{2}[a-zA-Z]{2}\\d+")) {
+            System.out.println("Invalid student number: " + studentNumber);
+            return false;
+        
+        }
+         return true;
+        
+        }
+    
+    }
+    
+    
+    
+    
+    
+    
