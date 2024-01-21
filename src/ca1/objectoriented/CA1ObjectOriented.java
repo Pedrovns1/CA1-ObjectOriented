@@ -31,7 +31,7 @@ public class CA1ObjectOriented {
                
                if (names.length <2) {
                    System.out.println("Invalid second name. The second name must be separated by a single space from the first name: " + fullName);
-                   continue;
+                   break;
                }
                
                String firstName = names[0];
