@@ -49,22 +49,22 @@ public class CA1ObjectOriented {
 
     private static boolean isValidData(String firstName, String secondName, int numClasses, String studentNumber){
     
-        if (!firstName.matches("[a-zA-Z]*")) {
-            System.out.println("Invalid first name: " + firstName);
+        if (!firstName.matches("[a-zA-Z]+")) {
+            System.out.println("Invalid first name. The first name must contain only letters:"  + firstName);
             return false;
         }
         
-        if (!secondName.matches("[a-zA-Z0-9]*")) {
-            System.out.println("Invalid second name: " + secondName);
+        if (!secondName.matches("[a-zA-Z]+\\s[a-zA-Z0-9]*")) {
+            System.out.println("Invalid second name. The second name must be separeted by a single space from the first name: " + secondName);
             return false;
         }
         
         if (numClasses <1 || numClasses > 8 ) {
-            System.out.println("Invalid number of classes: " + numClasses);
+            System.out.println("Invalid number of classes. The number of classes must be between 1 and 8:" + numClasses);
             return false;
         }
         if (!studentNumber.matches("\\d{2}[a-zA-Z]{2,5}\\d+")) {
-            System.out.println("Invalid student number: " + studentNumber);
+            System.out.println("Invalid student number. Ensure the student number is at least 6 characters long, starting with 2 numbers, followed by 1, 2 or possibly 3 letters, and ending with numbers." + studentNumber);
             return false;
         
         }
