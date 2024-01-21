@@ -27,13 +27,7 @@ public class CA1ObjectOriented {
            
             while (sc.hasNextLine()) {
                String fullName = sc.nextLine();
-               String[] names = fullName.split("\\s", 2);
-               
-               if (names.length <2) {
-                   System.out.println("Invalid second name. The second name must be separated by a single space from the first name: " + fullName);
-                   break;
-               }
-               
+               String[] names = fullName.split("\\s", 2);              
                String firstName = names[0];
                String secondName = names[1];
                int numClasses = Integer.parseInt(sc.nextLine());
