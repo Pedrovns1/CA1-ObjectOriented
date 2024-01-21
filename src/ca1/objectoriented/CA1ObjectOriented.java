@@ -26,7 +26,14 @@ public class CA1ObjectOriented {
             BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\peuvi\\Documents\\NetBeansProjects\\CA1-ObjectOriented\\status.txt"));
            
             while (sc.hasNextLine()) {
-               String[] names = sc.nextLine().split("\\s");
+               String fullName = sc.nextLine();
+               String[] names = fullName.split("\\s", 2);
+               
+               if (names.length <2) {
+                   System.out.println("Invalid second name. The second name must be separated by a single space from the first name: " + fullName);
+                   continue;
+               }
+               
                String firstName = names[0];
                String secondName = names[1];
                int numClasses = Integer.parseInt(sc.nextLine());
@@ -54,7 +61,7 @@ public class CA1ObjectOriented {
             return false;
         }
         
-        if (!secondName.matches("[a-zA-Z]+\\s[a-zA-Z0-9]*")) {
+        if (!secondName.matches("[a-zA-Z0-9]+")) {
             System.out.println("Invalid second name. The second name must be separeted by a single space from the first name: " + secondName);
             return false;
         }
