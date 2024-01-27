@@ -59,7 +59,7 @@ public class CA1ObjectOriented {
 
                 if (!isValidStudentID(studentIdLine)) {
                     System.out.println("Invalid student ID format: " + studentIdLine);
-                    System.out.println("Should be at least 6 characters long.\n" + "Start with 2 numbers.\n" + "Followed by 1 to 3 letters.\n" + "End with numbers.");
+                    System.out.println("Should be at least 6 characters long.\n" + "Must begin with the digits 20 or higher.\n" + "Must include 1 to 3 letters in the middle.\n" + "Must end with a number between 1 and 200.");
                     continue;
                 }
 
