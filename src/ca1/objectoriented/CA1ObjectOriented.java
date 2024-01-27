@@ -22,7 +22,8 @@ public class CA1ObjectOriented {
     
     public static final String NAME_REQUIREMENTS = "^[a-zA-Z]+ [a-zA-Z0-9]+$";
     public static final String NCLASSES_REQUIREMENTS = "^[1-8]$";
-    public static final String STUDENT_ID_REQUIREMENTS = "^[2-9]\\d{1}[a-zA-Z]{2,5}\\d+$";
+    public static final String STUDENT_ID_REQUIREMENTS = "^[2-9]\\d{1}[a-zA-Z]{2,4}(1\\d{2}|200|[1-9]\\d?)$";
+
    
     
     public static void main(String[] args) {
@@ -85,6 +86,9 @@ public class CA1ObjectOriented {
     }
 
     private static boolean isValidStudentID(String studentIdLine) {
+        if (studentIdLine.length() < 6) {
+        return false;
+    }
         return studentIdLine.matches(STUDENT_ID_REQUIREMENTS);
     }
     
