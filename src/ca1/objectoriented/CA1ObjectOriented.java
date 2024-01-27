@@ -20,9 +20,9 @@ public class CA1ObjectOriented {
      * @param args the command line arguments
      */
     
-    public static final String NAME_REQUIREMENTS = "^[a-zA-Z]+ [a-zA-Z]+$";
+    public static final String NAME_REQUIREMENTS = "^[a-zA-Z]+ [a-zA-Z0-9]+$";
     public static final String NCLASSES_REQUIREMENTS = "^[1-8]$";
-    public static final String STUDENT_ID_REQUIREMENTS = "\\d{2}[a-zA-Z]{2,5}\\d+";
+    public static final String STUDENT_ID_REQUIREMENTS = "^[2-9]\\d{1}[a-zA-Z]{2,5}\\d+$";
    
     
     public static void main(String[] args) {
