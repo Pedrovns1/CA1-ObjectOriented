@@ -30,28 +30,50 @@ public class CA1ObjectOriented {
         try {
             Scanner sc = new Scanner(new FileReader("C:\\Users\\peuvi\\Documents\\NetBeansProjects\\CA1-ObjectOriented\\students.txt"));
             BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\peuvi\\Documents\\NetBeansProjects\\CA1-ObjectOriented\\status.txt"));
-           
+
             while (sc.hasNextLine()) {
-               String fullName = sc.nextLine();
-               String[] names = fullName.split("\\s", 2);              
-               String firstName = names[0];
-               String secondName = names[1];
-               int numClasses = Integer.parseInt(sc.nextLine());
-               String studentNumber = sc.nextLine();
-            
-               if (isValidData(firstName, secondName, numClasses, studentNumber)) {
-                    studentDataOutput(writer, studentNumber, secondName, numClasses);
+                String fullNameLine = sc.nextLine();
+
+                if (fullNameLine.isEmpty()) {
+                    sc.nextLine();
+                    sc.nextLine();
+                    
+                    continue;  
                 }
-            
+
+                String numClassesLine = sc.nextLine();
+                String studentIdLine = sc.nextLine();
+
+                if (!isValidName(fullNameLine)) {
+                    System.out.println("Invalid name format: " + fullNameLine);
+                    System.out.println("Please enter a valid full name with only letters for the first name, followed by a single space, and the second name can include letters and/or numbers.");
+                    continue;
+                }
+
+                if (!isValidnumClasses(numClassesLine)) {
+                    System.out.println("Invalid number of classes format: " + numClassesLine);
+                    System.out.println("Provide a valid number of classes. It should be an number between 1 and 8");
+                    continue;
+                }
+
+                if (!isValidStudentID(studentIdLine)) {
+                    System.out.println("Invalid student ID format: " + studentIdLine);
+                    System.out.println("Should be at least 6 characters long.\n" + "Start with 2 numbers.\n" + "Followed by 1 to 3 letters.\n" + "End with numbers.");
+                    continue;
+                }
+
+                int numClasses = Integer.parseInt(numClassesLine);
+                String studentNumber = studentIdLine;
+                String[] names = fullNameLine.split(" ");
+
+                studentDataOutput(writer, studentNumber, names[1], numClasses);
             }
 
-            
             sc.close();
             writer.close();
         } catch (Exception e) {
-            System.out.println("e");
+            System.out.println(e.getMessage());
         }
-
     }
 
     private static boolean isValidName(String fullNameLine) {
