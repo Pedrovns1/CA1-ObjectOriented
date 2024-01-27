@@ -19,6 +19,12 @@ public class CA1ObjectOriented {
     /**
      * @param args the command line arguments
      */
+    
+    public static final String NAME_REQUIREMENTS = "^[a-zA-Z]+ [a-zA-Z]+$";
+    public static final String NCLASSES_REQUIREMENTS = "^[1-8]$";
+    public static final String STUDENT_ID_REQUIREMENTS = "\\d{2}[a-zA-Z]{2,5}\\d+";
+   
+    
     public static void main(String[] args) {
 
         try {
@@ -48,31 +54,17 @@ public class CA1ObjectOriented {
 
     }
 
-    private static boolean isValidData(String firstName, String secondName, int numClasses, String studentNumber){
-    
-        if (!firstName.matches("[a-zA-Z]+")) {
-            System.out.println("Invalid first name. The first name must contain only letters:"  + firstName);
-            return false;
-        }
-        
-        if (!secondName.matches("[a-zA-Z0-9]+")) {
-            System.out.println("Invalid second name. The second name must be separeted by a single space from the first name: " + secondName);
-            return false;
-        }
-        
-        if (numClasses <1 || numClasses > 8 ) {
-            System.out.println("Invalid number of classes. The number of classes must be between 1 and 8:" + numClasses);
-            return false;
-        }
-        if (!studentNumber.matches("\\d{2}[a-zA-Z]{2,5}\\d+")) {
-            System.out.println("Invalid student number. Ensure the student number is at least 6 characters long, starting with 2 numbers, followed by 1, 2 or possibly 3 letters, and ending with numbers." + studentNumber);
-            return false;
-        
-        }
-         return true;
-        
-        }
-    
+    private static boolean isValidName(String fullNameLine) {
+        return fullNameLine.matches(NAME_REQUIREMENTS);
+    }
+
+    private static boolean isValidnumClasses(String numClassesLine) {
+        return numClassesLine.matches(NCLASSES_REQUIREMENTS);
+    }
+
+    private static boolean isValidStudentID(String studentIdLine) {
+        return studentIdLine.matches(STUDENT_ID_REQUIREMENTS);
+    }
     
     
     
