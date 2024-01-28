@@ -77,15 +77,15 @@ public class CA1ObjectOriented {
         }
     }
 
-    private static boolean isValidName(String fullNameLine) {
+    public static boolean isValidName(String fullNameLine) {
         return fullNameLine.matches(NAME_REQUIREMENTS);
     }
 
-    private static boolean isValidnumClasses(String numClassesLine) {
+    public static boolean isValidnumClasses(String numClassesLine) {
         return numClassesLine.matches(NCLASSES_REQUIREMENTS);
     }
 
-    private static boolean isValidStudentID(String studentIdLine) {
+    public static boolean isValidStudentID(String studentIdLine) {
         if (studentIdLine.length() < 6) {
         return false;
     }
@@ -94,7 +94,7 @@ public class CA1ObjectOriented {
     
     
     
-    private static String studentWorkload(int numClasses) {
+    public static String studentWorkload(int numClasses) {
     
         if (numClasses == 1) {
         return "Very light";
@@ -115,7 +115,7 @@ public class CA1ObjectOriented {
     }
 
     
-    private static void studentDataOutput (BufferedWriter writer, String studentNumber, String secondName, int numClasses) throws IOException {
+    public static void studentDataOutput (BufferedWriter writer, String studentNumber, String secondName, int numClasses) throws IOException {
     
     writer.write(studentNumber + " – " + secondName + " " + "\n" + studentWorkload(numClasses) + "\n");
     }
