@@ -26,7 +26,7 @@ public class CA1ObjectOriented {
 
    
     
-    public static void main(String[] args) {
+    public class HandlerData {
 
         try {
             Scanner sc = new Scanner(new FileReader("C:\\Users\\peuvi\\Documents\\NetBeansProjects\\CA1-ObjectOriented\\students.txt"));

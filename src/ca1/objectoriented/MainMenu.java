@@ -26,7 +26,7 @@ public class MainMenu {
                 System.out.println("1. Read data from local file");
                 System.out.println("2. Add data via console");
                 System.out.println("3. Exit");
-                System.out.print("Please enter the number corresponding to the desired option: ");
+                System.out.println("Please enter the number corresponding to the desired option: ");
 
                 int choice = getOption(sc);
 
