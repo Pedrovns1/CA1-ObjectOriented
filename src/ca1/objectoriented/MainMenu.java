@@ -17,10 +17,37 @@ import java.util.Scanner;
 public class MainMenu {
 
     public void showMenu() {
+        try {
+            Scanner sc = new Scanner(System.in);
+            BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\peuvi\\Documents\\NetBeansProjects\\CA1-ObjectOriented\\status.txt", true));
 
-        Scanner sc = new Scanner(System.in);
-        BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\peuvi\\Documents\\NetBeansProjects\\CA1-ObjectOriented\\status.txt", true));
+            while (true) {
+                System.out.println("Welcome to the Student System");
+                System.out.println("1. Read data from local file");
+                System.out.println("2. Add data via console");
+                System.out.println("3. Exit");
+                System.out.print("Please enter the number corresponding to the desired option: ");
 
+                int choice = getOption(sc);
+
+                switch (choice) {
+                    case 1:
+                        readDataFromFile(writer);
+                        break;
+                    case 2:
+                        addDataViaConsole(sc, writer);
+                        break;
+                    case 3:
+                        System.out.println("Exiting the program. Goodbye!");
+                        writer.close();
+                        System.exit(0);
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
     private int getOption(Scanner sc) {
@@ -93,5 +120,3 @@ public class MainMenu {
     }
 
 }
-
-
