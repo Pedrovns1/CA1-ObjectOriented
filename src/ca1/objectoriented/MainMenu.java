@@ -86,6 +86,10 @@ public class MainMenu {
                 String[] names = fullNameLine.split(" ");
 
                 CA1ObjectOriented.studentDataOutput(writer, studentNumber, names[1], numClasses);
+
+                System.out.println("Read from file: " + studentNumber + " – " + names[1] + " " + CA1ObjectOriented.studentWorkload(numClasses));
+
+                writer.write(studentNumber + " – " + names[1] + " " + CA1ObjectOriented.studentWorkload(numClasses) + "\n");
             }
 
             sc.close();
@@ -103,11 +107,11 @@ public class MainMenu {
 
         while (true) {
             String fullNameLine = getInput("Enter the first and last name separated by one single space. (or type 'exit' to stop):", sc);
-           
+
             if (fullNameLine.equalsIgnoreCase("exit")) {
                 break;
             }
-            
+
             String numClassesLine = getInput("Enter number of classes:", sc);
             String studentIdLine = getInput("Enter student ID:", sc);
 

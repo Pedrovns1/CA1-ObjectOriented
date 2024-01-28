@@ -5,10 +5,7 @@
 package ca1.objectoriented;
 
 import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  *
@@ -16,9 +13,6 @@ import java.util.Scanner;
  */
 public class CA1ObjectOriented {
 
-    /**
-     * @param args the command line arguments
-     */
     
     public static final String NAME_REQUIREMENTS = "^[a-zA-Z]+ [a-zA-Z0-9]+$";
     public static final String NCLASSES_REQUIREMENTS = "^[1-8]$";
