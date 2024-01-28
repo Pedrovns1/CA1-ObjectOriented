@@ -102,7 +102,12 @@ public class MainMenu {
     private void addDataViaConsole(Scanner sc, BufferedWriter writer) throws IOException {
 
         while (true) {
-            String fullNameLine = getInput("Enter the first and last name separated by one single space. (or type exit to stop):", sc);
+            String fullNameLine = getInput("Enter the first and last name separated by one single space. (or type 'exit' to stop):", sc);
+           
+            if (fullNameLine.equalsIgnoreCase("exit")) {
+                break;
+            }
+            
             String numClassesLine = getInput("Enter number of classes:", sc);
             String studentIdLine = getInput("Enter student ID:", sc);
 
