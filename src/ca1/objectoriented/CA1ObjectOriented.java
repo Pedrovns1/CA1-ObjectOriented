@@ -5,6 +5,7 @@
 package ca1.objectoriented;
 
 import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -60,10 +61,9 @@ public class CA1ObjectOriented {
     }
 
     
-    public static void studentDataOutput (BufferedWriter writer, String studentNumber, String secondName, int numClasses) throws IOException {
-    
+    public static void studentDataOutput(BufferedWriter writer, String studentNumber, String secondName, int numClasses) throws IOException {
     writer.write(studentNumber + " – " + secondName + " " + "\n" + studentWorkload(numClasses) + "\n");
-    }
+}
     
     
     
