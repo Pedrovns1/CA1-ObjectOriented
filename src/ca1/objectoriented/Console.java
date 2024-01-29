@@ -9,14 +9,9 @@ package ca1.objectoriented;
  * @author peuvi
  */
 public class Console {
-    
-    
-   
 
     public static void main(String[] args) throws Exception {
         MainMenu mainMenuInstance = new MainMenu();
         mainMenuInstance.showMenu();
     }
 }
-
-
