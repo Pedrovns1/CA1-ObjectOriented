@@ -63,6 +63,8 @@ public class MainMenu {
 
     private void readDataFromFile(BufferedWriter writer) throws IOException {
     try (Scanner sc = new Scanner(new FileReader("students.txt"))) {
+        int counter = 1;
+
         while (sc.hasNextLine()) {
             String fullNameLine = sc.nextLine();
 
@@ -76,7 +78,8 @@ public class MainMenu {
             String studentIdLine = sc.nextLine();
 
             if (!CA1ObjectOriented.isValidName(fullNameLine) || !CA1ObjectOriented.isValidnumClasses(numClassesLine) || !CA1ObjectOriented.isValidStudentID(studentIdLine)) {
-                System.out.println("Invalid data in the file. Skipping.");
+                System.out.println(counter + ": " + "Invalid data in the file. Skipping.");
+                counter++;
                 continue;
             }
 
@@ -86,7 +89,8 @@ public class MainMenu {
 
             CA1ObjectOriented.studentDataOutput(writer, studentNumber, names[1], numClasses);
 
-            System.out.println("Read from file: " + studentNumber + " – " + names[1] + " " + CA1ObjectOriented.studentWorkload(numClasses));
+            System.out.println(counter + ": " + "Read from file: " + studentNumber + " – " + names[1] + " " + CA1ObjectOriented.studentWorkload(numClasses));
+            counter++;
         }
     } catch (IOException e) {
         System.out.println("Error reading data from file: " + e.getMessage());
@@ -108,8 +112,8 @@ public class MainMenu {
                 break;
             }
 
-            String numClassesLine = getInput("Enter number of classes:", sc);
-            String studentIdLine = getInput("Enter student ID:", sc);
+            String numClassesLine = getInput("Enter number of classes,a number between 1 to 8:", sc);
+            String studentIdLine = getInput("Enter student ID:" + "\n" + "- First 2 numbers should start with 20 or higher" + "\n" + "- The 3rd and 4th characters (and possibly 5th) being a letter" + "\n" + "- The number after the letters must be between 1 and 200" , sc);
 
             if (CA1ObjectOriented.isValidName(fullNameLine) && CA1ObjectOriented.isValidnumClasses(numClassesLine) && CA1ObjectOriented.isValidStudentID(studentIdLine)) {
 

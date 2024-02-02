@@ -7,6 +7,7 @@ package ca1.objectoriented;
 /**
  *
  * @author peuvi
+ * https://github.com/Pedrovns1/CA1-ObjectOriented GitHub repository
  */
 public class Console {
 
