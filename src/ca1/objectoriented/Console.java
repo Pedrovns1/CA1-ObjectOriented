@@ -12,7 +12,10 @@ package ca1.objectoriented;
 public class Console {
 
     public static void main(String[] args) throws Exception {
+        // Create an instance of the 'MainMenu' class
         MainMenu mainMenuInstance = new MainMenu();
+       
+        // Uses the showMenu on my 'MainMenu' class to start the program
         mainMenuInstance.showMenu();
     }
 }
