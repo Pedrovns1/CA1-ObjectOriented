@@ -107,7 +107,7 @@ public class MainMenu {
             // Output valid data to the writer
             CA1ObjectOriented.studentDataOutput(writer, studentNumber, names[1], numClasses);
             
-            // Displaying information about a student read from a file
+            // Displaying information about a student read from my 'students.txt' file
             System.out.println(counter + ": " + "Read from file: " + studentNumber + " – " + names[1] + " " + CA1ObjectOriented.studentWorkload(numClasses));
             // Incrementing the counter to keep track of the sequence number for the next line of data
             counter++;
